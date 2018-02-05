@@ -4,7 +4,7 @@
     "web":{
         "http":{
             "host":"localhost",
-            "port": 60000
+            "port":60000
         },
         "rewrites":{
             "enable":true,

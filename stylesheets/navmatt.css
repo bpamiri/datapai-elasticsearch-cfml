@@ -1,0 +1,111 @@
+/*Credits: Dynamic Drive CSS Library */
+/*URL: http://www.dynamicdrive.com/style/ */
+
+.mattblacktabs{
+width: 100%;
+overflow: hidden;
+border-bottom: 1px solid black; /*bottom horizontal line that runs beneath tabs*/
+}
+
+.mattblacktabs ul{
+margin: 0;
+padding: 0;
+padding-left: 5px; /*offset of tabs relative to browser left edge*/
+font: bold 12px Tahoma;
+list-style-type: none;
+}
+
+.mattblacktabs li{
+display: inline;
+margin: 0;
+}
+
+.mattblacktabs li a{
+float: left;
+display: block;
+text-decoration: none;
+margin: 0;
+padding: 7px 8px; /*padding inside each tab*/
+border-right: 10px solid white; /*right divider between tabs*/
+color: white;
+background: #414141; /*background of tabs (default state)*/
+text-align: center;
+}
+
+.mattblacktabs li a:visited{
+color: white;
+}
+
+.mattblacktabs li a:hover, .mattblacktabs li.selected a{
+background: white; /*background of tabs for hover state, plus tab with "selected" class assigned to its LI */
+color: black;
+}
+
+/*
+padding: padding inside each tab
+border-right: right divider between tabs
+background: background of tabs (default state)
+*/
+.mattblacktabs li.black a{ background: #000000; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.blue a{ background: #0000ff; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.blueviolet a{ background: #8a2be2; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.brown a{ background: #8b4513; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.cadetblue a{ background: #5f9ea0; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.chocolate a{ background: #d2691e; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.coral a{ background: #ff7f50; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.cornflowerblue a{ background: #6495ed; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.crimson a{ background: #dc143c; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.darkcyan a{ background: #008b8b; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.darkgreen a{ background: #003300; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.darkolivegreen a{ background: #556b2f; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.darkred a{ background: #8b0000; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.deeppink a{ background: #ff1493; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.fuchsia a{ background: #ff00ff; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.gray a{ background: #808080; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.green a{ background: #008800; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.orange a{ background: #ffa500; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.purple a{ background: #800080; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.red a{ background: #ff0000; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
+.mattblacktabs li.yellow a{ background: #cc9900; 
+	float: left;display: block;text-decoration: none;margin: 0;padding: 7px 8px; border-right: 10px solid white; color: white;text-align: center; 
+} 
