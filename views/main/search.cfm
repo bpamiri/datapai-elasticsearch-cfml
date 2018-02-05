@@ -8,7 +8,7 @@
 	#endFormTag()#
 
 	<cfif isDefined("esresult")>
-		<cfif esresult.hits.total neq 0>
+		<cfif esresult.hits.total eq 1>
 			
 <!---			<cfdump var="#esresult.hits.hits[1]._source#"> --->
 
@@ -22,8 +22,12 @@
 	    	<table border="0" cellspacing="5" cellpadding="0" width="100%">
 					<tr>
 						<td>&nbsp;</td>
-						<td style="TEXT-ALIGN: center">Previous Part: #es.PreviousPart#</td>
-						<td colspan="2" style="TEXT-ALIGN: center">Next Part: #es.NextPart#</td>
+						<td style="TEXT-ALIGN: center">
+							Previous Part: <a href="/main/search?sku=#es.PreviousPart#">#es.PreviousPart#</a>
+						</td>
+						<td colspan="2" style="TEXT-ALIGN: center">
+							Next Part: <a href="/main/search?sku=#es.NextPart#">#es.NextPart#</a>
+						</td>
 					</tr>
 					<tr>
 						<td valign="top">
@@ -73,7 +77,7 @@
 						<td valign="top" colspan="3">
 							<table border="0" cellspacing="0" cellpadding="0" width="100%">
 								<tr class="Row">
-									<td colspan="8" style="TEXT-ALIGN: center"><strong>#es.SKU# #es.OEM# #es.Description# XXXX</strong>&nbsp;</td>
+									<td colspan="8" style="TEXT-ALIGN: center"><strong>#es.SKU# #es.OEM# #es.Description# #es.SellPack#</strong>&nbsp;</td>
 								</tr>
 								<tr class="Row">
 									<td colspan="8" style="TEXT-ALIGN: center"><strong>(Last PO: XXXX)</strong></td>
@@ -94,7 +98,7 @@
 									<td class="th" nowrap>QOH:</td>
 									<td>#es.QuantityOnHand#&nbsp;</td>
 									<td class="th" nowrap>Last Cost:</td>
-									<td>$XXXX&nbsp;</td>
+									<td>$#es.LandedCost#&nbsp;</td>
 									<td class="th" nowrap>New:</td>
 									<td>#es.NewItemCode#&nbsp;</td>
 								</tr>
@@ -102,7 +106,7 @@
 									<td class="th" nowrap>Price Change:</td>
 									<td nowrap>#es.LastPriceChange#&nbsp;</td>
 									<td class="th" nowrap>LTD:</td>
-									<td>XXXX&nbsp;</td>
+									<td>#es.LeadTime#&nbsp;</td>
 									<td class="th" nowrap>LN:</td>
 									<td>#es.LineCode#&nbsp;</td>
 									<td class="th" nowrap>SLN:</td>
@@ -112,11 +116,11 @@
 									<td class="th" nowrap>Stock Level:</td>
 									<td nowrap>#es.MinStockLevel# - #es.MaxStockLevel#&nbsp;</td>
 									<td class="th" nowrap>CAT:</td>
-									<td>XXXX&nbsp;</td>
+									<td>#es.ClassificationCode#&nbsp;</td>
 									<td class="th" nowrap>LTM:</td>
-									<td>XXXX&nbsp;</td>
+									<td>#Int((es.LeadTime/30)+.9)#&nbsp;</td>
 									<td class="th" nowrap>SPK:</td>
-									<td>XXXX&nbsp;</td>
+									<td>#es.StandardPack#&nbsp;</td>
 								</tr>
 								<tr class="Row">
 									<td class="th" nowrap>Primary Bin:</td>
@@ -132,7 +136,7 @@
 									<td class="th" nowrap>Create Date:</td>
 									<td>#es.StartDate#&nbsp;</td>
 									<td class="th" nowrap>Blanket PO:</td>
-									<td>#es.BlanketPO#</td>
+									<td>#iif(es.BlanketPO,de("Yes"),de("No"))#</td>
 									<td class="th" nowrap>Boxes:</td>
 									<td>#es.BoxPartNumber#&nbsp;</td>
 									<td class="th" nowrap>&nbsp;</td>
@@ -281,13 +285,33 @@
 	  </tr>
 	 
 	  <tr>
-	    <td><iframe frameborder="0" scrolling="auto" name="invinqIFrame" src="" width="100%" height="2000"></iframe></td>
+	    <td><iframe frameborder="0" scrolling="auto" name="invinqIFrame" src="" width="100%" height="1"></iframe></td>
 	  </tr>
 	</table>
 
 
 
-
+		<cfelseif esresult.hits.total gt 1>
+			<table cellspacing="0" cellpadding="0" width="100%">
+				<tr class="Caption">
+					<th scope="col">Part Number</th>
+					<th scope="col">Product Line</th>
+					<th scope="col">Product Group</th>
+					<th scope="col">Product Class</th>
+					<th scope="col">Description</th>
+				</tr>
+				<cfloop index="currentIndex" array="#esresult.hits.hits#"> 
+					<tr class="Row">
+						<td><a href="/main/search?sku=#currentIndex._source.PartNumber#">#currentIndex._source.PartNumber#</a></td>
+						<td>#currentIndex._source.ProductLine#</td>
+						<td>#currentIndex._source.ProductGroup#</td>
+						<td>#currentIndex._source.ProductClass#</td>
+						<td>#currentIndex._source.Description#</td>
+					</tr>
+				</cfloop> 
+			</table>
+		<cfelse>
+			No records were found	
 		</cfif>
 	</cfif>
 </cfoutput>

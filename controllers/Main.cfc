@@ -2,15 +2,22 @@
 
 	<cffunction name="search">
 		<cfif StructKeyExists(params, "sku")>
-			<cfset search_term = params.sku>
 
+			<cfset search_terms = '\"' & replace(params.sku, " ", '\"+\"') & '\"'> 
 			<cfset elastic_url = "http://10.100.10.90:9200/w1inventory/inventory/_search">
 
 			<cfset esquery = '{
 												  "query": {
-												    "term": {
-												      "SKU": {
-												        "value": "#search_term#"
+												    "simple_query_string": {
+												      "query": "#search_terms#",
+												        "fields": [
+												          "OEM",
+												          "Keywords",
+												          "PartNumber",
+												          "SKU",
+												          "ProductLine"
+												        ],
+												        "default_operator": "OR"
 												      }
 												    }
 												  }
