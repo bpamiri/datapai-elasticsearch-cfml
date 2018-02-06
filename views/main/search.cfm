@@ -118,7 +118,11 @@
 									<td class="th" nowrap>CAT:</td>
 									<td>#es.ClassificationCode#&nbsp;</td>
 									<td class="th" nowrap>LTM:</td>
-									<td>#Int((es.LeadTime/30)+.9)#&nbsp;</td>
+									<td>
+										<cfif es.LeadTime neq "">
+											#Int((es.LeadTime/30)+.9)#&nbsp;
+										</cfif>
+									</td>
 									<td class="th" nowrap>SPK:</td>
 									<td>#es.StandardPack#&nbsp;</td>
 								</tr>
@@ -232,52 +236,52 @@
 	    	<div class="mattblacktabs">
 					<ul>
 						<li class="green">
-							<a target="invinqIFrame" href="invinqINCPH.php?s_PAI_part_no=CUP161600">(F1)<br>Sales</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqINCPH.php?s_PAI_part_no=#es.PartNumber#')">(F1)<br>Sales</a>
 						</li>
 						<li class="yellow">
-							<a target="invinqIFrame" href="invinqF2.php?s_PAI_part_no=CUP161600">(F2)<br>Notes</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqF2.php?s_PAI_part_no=#es.PartNumber#')">(F2)<br>Notes</a>
 						</li>
 						<li class="gray">
-							<a target="invinqIFrame" href="invinqF6.php?s_PAI_part_no=CUP161600">(F6)<br>Moves</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqF6.php?s_PAI_part_no=#es.PartNumber#')">(F6)<br>Moves</a>
 						</li>
 						<li class="darkgreen">
-							<a target="invinqIFrame" href="invinqF7.php?s_PAI_part_no=CUP161600">(F7)<br>Quotes</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqF7.php?s_PAI_part_no=#es.PartNumber#')">(F7)<br>Quotes</a>
 						</li>
 						<li class="crimson">
-							<a target="invinqIFrame" href="invinqK.php?s_PAI_part_no=CUP161600">(K)<br>Kit</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqK.php?s_PAI_part_no=#es.PartNumber#')">(K)<br>Kit</a>
 						</li>
 						<li class="darkred">
-							<a target="invinqIFrame" href="invinqL.php?s_PAI_part_no=CUP161600">(L)<br>List</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqL.php?s_PAI_part_no=#es.PartNumber#')">(L)<br>List</a>
 						</li>
 						<li class="brown">
-							<a target="invinqIFrame" href="invinqC.php?s_PAI_part_no=CUP161600">(C)<br>Ctlg</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqC.php?s_PAI_part_no=#es.PartNumber#')">(C)<br>Ctlg</a>
 						</li>
 						<li class="red">
-							<a target="invinqIFrame" href="invinqR.php?s_PAI_part_no=CUP161600">(R)<br>Form</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqR.php?s_PAI_part_no=#es.PartNumber#')">(R)<br>Form</a>
 						</li>
 						<li class="blue">
-							<a target="invinqIFrame" href="invinqM.php?s_PAI_part_no=CUP161600">(M)<br>Drw</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqM.php?s_PAI_part_no=#es.PartNumber#')">(M)<br>Drw</a>
 						</li>
 						<li class="purple">
-							<a target="invinqIFrame" href="invinqBH.php?s_PAI_part_no=CUP161600">(BH)<br>Bin Hist</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqBH.php?s_PAI_part_no=#es.PartNumber#')">(BH)<br>Bin Hist</a>
 						</li>
 						<li class="orange">
-							<a target="invinqIFrame" href="invinqPartFigures.php?s_PAI_part_no=CUP161600">Fig<br>Chg</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqPartFigures.php?s_PAI_part_no=#es.PartNumber#')">Fig<br>Chg</a>
 						</li>
 						<li class="coral">
-							<a target="invinqIFrame" href="invinqO.php?s_PAI_part_no=CUP161600">(O)<br>Lost</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqO.php?s_PAI_part_no=#es.PartNumber#')">(O)<br>Lost</a>
 						</li>
 						<li class="darkolivegreen">
-							<a target="invinqIFrame" href="invinqOpenCustOrders.php?s_PAI_part_no=CUP161600">Open<br>Orders</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqOpenCustOrders.php?s_PAI_part_no=#es.PartNumber#')">Open<br>Orders</a>
 						</li>
 						<li class="orange">
-							<a target="invinqIFrame" href="invinqLC.php?s_PAI_part_no=CUP161600">Lot<br>Code</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqLC.php?s_PAI_part_no=#es.PartNumber#')">Lot<br>Code</a>
 						</li>
 						<li class="deeppink">
-							<a target="invinqIFrame" href="invinqSupport.php?s_PAI_part_no=CUP161600">Follow<br>Up</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqSupport.php?s_PAI_part_no=#es.PartNumber#')">Follow<br>Up</a>
 						</li>
 						<li class="yellow">
-							<a target="invinqIFrame" href="invinqProImp.php?s_PAI_part_no=CUP161600">Quality<br>Notes</a>
+							<a target="invinqIFrame" onclick="changeUrl('invinqProImp.php?s_PAI_part_no=#es.PartNumber#')">Quality<br>Notes</a>
 						</li>
 					</ul>
 				</div>
@@ -285,7 +289,9 @@
 	  </tr>
 	 
 	  <tr>
-	    <td><iframe frameborder="0" scrolling="auto" name="invinqIFrame" src="" width="100%" height="1"></iframe></td>
+	    <td>
+	    		<iframe frameborder="0" scrolling="auto" name="invinqIFrame" src="" width="100%" height="2000"></iframe>
+	    </td>
 	  </tr>
 	</table>
 
@@ -314,4 +320,12 @@
 			No records were found	
 		</cfif>
 	</cfif>
+
+	<script>
+		function changeUrl(buttonURL) {
+	    var baseURL = "http://paiintranet.paiindustries.com/datapai/" + buttonURL;
+	    var innerText = '<p style="text-align:center"><img src="../../images/loading.gif"></p><script>window.location.replace("' + baseURL + '");<' + '/script>';
+	    document.getElementsByName('invinqIFrame')[0].srcdoc = innerText;
+		}
+	</script>
 </cfoutput>

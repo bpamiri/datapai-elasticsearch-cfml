@@ -65,7 +65,6 @@
 /* BEGIN Common */
 body { 
 	color: #000000;
-	background-image: url('Images/PageBg.gif');
 	font-family: Tahoma;font-size: 80%;
 	}
 
@@ -193,7 +192,7 @@ html>body input, html>body select, html>body textarea {
 .Header th { 
 	font-size: 110%; font-weight: bold; text-align: left;
 	padding: 3px;
-	background-image: url('Images/HeaderBg.gif'); color: #ffffff;
+	color: #ffffff;
 	width: 100%;
 	white-space: nowrap;
 	
@@ -223,12 +222,8 @@ html>body .Header th {
 	color: #ffffff; text-decoration: none;
 	}
 
-.HeaderLeft { 
-	background-image: url('Images/HeaderLeft.gif');
-	}
 
 .HeaderRight { 
-	background-image: url('Images/HeaderRight.gif');
 	background-position: right top;
 	}
 
@@ -251,7 +246,7 @@ html>body .Header th {
 	font-size: 80%; 	text-align: left; vertical-align: top;
 	padding: 3px;
 	border-right: 1px solid #FFFFFF;
-	background-image: url('Images/CaptionBg.gif'); color: #000000;
+	color: #000000;
 	white-space: nowrap;
 	}
 
@@ -259,7 +254,7 @@ html>body .Header th {
 	font-size: 80%; 	text-align: left; vertical-align: top;
 	padding: 3px;
 	border-right: 1px solid #FFFFFF;
-	background-image: url('Images/CaptionBg.gif'); color: #000000;
+	color: #000000;
 	white-space: nowrap;
 	}
 
@@ -427,7 +422,7 @@ html>body .AltRow th, html>body .AltRow td {
 	font-size: 80%;
 	padding: 3px;
 	border-top: 1px solid #FFFFFF;
-	background-image: url('Images/CaptionBg.gif'); color: #000000;
+	color: #000000;
 	text-align: center;
 	vertical-align: middle;
 	white-space: nowrap;
@@ -520,7 +515,7 @@ html>body .NoRecords td, html>body .Footer td {
 	font-size: 100%; 	text-align: left; vertical-align: top;
 	padding: 3px;
 	border-right: 1px solid #FFFFFF;
-	background-image: url('Images/CaptionBg.gif'); color: #000000;
+	color: #000000;
 	font-weight: bold;
 	white-space: nowrap;
 	}	
@@ -528,7 +523,7 @@ html>body .NoRecords td, html>body .Footer td {
 	font-size: 80%;
 	padding: 3px;
 	border-top: 1px solid #FFFFFF;
-	background-image: url('Images/CaptionBg.gif'); color: #000000;
+	color: #000000;
 	text-align: right;
 	vertical-align: middle;
 	white-space: nowrap;
@@ -1129,7 +1124,7 @@ html>body .CalendarSelectedDay {
 .CalendarNavigator {
 	font-size: 80%;
 	padding: 3px;
-	background-image: url('Images/CaptionBg.gif'); color: #000000;
+	color: #000000;
 	text-align: center;
 	vertical-align: middle;
 	white-space: nowrap;
@@ -1241,7 +1236,7 @@ html>body .th {
 .Header .th { 
 	font-size: 110%; font-weight: bold; text-align: left;
 	padding: 3px;
-	background-image: url('Images/HeaderBg.gif'); color: #ffffff;
+	color: #ffffff;
 	width: 100%;
 	white-space: nowrap;
 }
@@ -1262,7 +1257,7 @@ html>body .Header .th {
 	font-size: 80%; 	text-align: left; vertical-align: top;
 	padding: 3px;
 	border-right: 1px solid #FFFFFF;
-	background-image: url('Images/CaptionBg.gif'); color: #000000;
+	color: #000000;
 	white-space: nowrap;
 }
 
