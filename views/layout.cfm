@@ -11,10 +11,14 @@
     <title>DataPai - Alpha Proof of Concept</title>
   </head>
   <body>
-		<cfoutput>
-		#flashMessages()#
-		#includeContent()#
-		</cfoutput>
+  	<div class="container-fluid">
+  		<div class="row">
+				<cfoutput>
+				#flashMessages()#
+				#includeContent()#
+				</cfoutput>
+			</div>
+		</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

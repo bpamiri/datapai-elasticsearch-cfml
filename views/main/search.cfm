@@ -1,15 +1,206 @@
 <cfoutput>
 
 <div class="container-fluid">
+	<div class="row justify-content-center">
+		<div class="col" align="center" style="padding: 20px">
+			#startFormTag(action="search",method="GET")#
 
-	<div align="center" style="padding: 20px">
-		#startFormTag(action="search",method="GET")#
+			    #textFieldTag(Name="search_term",autofocus="autofocus" )#
+			    #submitTag(value="P")#
 
-		    #textFieldTag(Name="sku")#
-		    #submitTag(value="P")#
-
-		#endFormTag()#
+			#endFormTag()#
+		</div>
 	</div>
+
+	<cfif isDefined("w1")>
+		<cfif arrayLen(w1.hits.hits) eq 1>
+
+			<div class="row">
+				<div class="col">
+					<nav>
+					  <div class="nav nav-sm nav-tabs" id="nav-tab" role="tablist">
+					    <a class="nav-item nav-link active" id="nav-w1-tab" data-toggle="tab" href="##nav-w1" role="tab" aria-controls="nav-home" aria-selected="true">W1</a>
+					    <a class="nav-item nav-link" id="nav-w2-tab" data-toggle="tab" href="##nav-w2" role="tab" aria-controls="nav-profile" aria-selected="false">W2</a>
+					    <a class="nav-item nav-link" id="nav-w4-tab" data-toggle="tab" href="##nav-w4" role="tab" aria-controls="nav-contact" aria-selected="false">W4</a>
+					    <a class="nav-item nav-link" id="nav-w5-tab" data-toggle="tab" href="##nav-w5" role="tab" aria-controls="nav-contact" aria-selected="false">W5</a>
+					    <a class="nav-item nav-link" id="nav-w6-tab" data-toggle="tab" href="##nav-w6" role="tab" aria-controls="nav-contact" aria-selected="false">W6</a>
+					    <a class="nav-item nav-link" id="nav-w88-tab" data-toggle="tab" href="##nav-w88" role="tab" aria-controls="nav-contact" aria-selected="false">W88</a>
+					    <a class="nav-item nav-link" id="nav-w99-tab" data-toggle="tab" href="##nav-w99" role="tab" aria-controls="nav-contact" aria-selected="false">W99</a>
+					  </div>
+					</nav>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="tab-content" id="nav-tabContent">
+					  <div class="tab-pane fade show active" id="nav-w1" role="tabpanel" aria-labelledby="nav-home-tab">#includePartial("w1")#</div>
+					  <div class="tab-pane fade" id="nav-w2" role="tabpanel" aria-labelledby="nav-profile-tab">#includePartial("w2")#</div>
+					  <div class="tab-pane fade" id="nav-w4" role="tabpanel" aria-labelledby="nav-contact-tab">#includePartial("w4")#</div>
+					  <div class="tab-pane fade" id="nav-w5" role="tabpanel" aria-labelledby="nav-contact-tab">#includePartial("w5")#</div>
+					  <div class="tab-pane fade" id="nav-w6" role="tabpanel" aria-labelledby="nav-contact-tab">#includePartial("w6")#</div>
+					  <div class="tab-pane fade" id="nav-w88" role="tabpanel" aria-labelledby="nav-contact-tab">#includePartial("w88")#</div>
+					  <div class="tab-pane fade" id="nav-w99" role="tabpanel" aria-labelledby="nav-contact-tab">#includePartial("w99")#</div>
+					</div>
+				</div>
+			</div>
+			<dir class="row">
+				<div class="col">
+					<ul class="nav nav-tabs">
+					  <li class="nav-item">
+					    <a class="nav-link" target="invinqIFrame" onclick="changeUrl('invinqINCPH.php?s_PAI_part_no=#w1.PartNumber#')">(F1)<br>Sales</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="##">Link</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="##">Link</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="##">Disabled</a>
+					  </li>
+					</ul>
+<!---					<nav>
+					  <div class="nav nav-sm nav-tabs" id="nav-tab" role="tablist">
+					    <a class="nav-item nav-link" id="nav-f1-tab" data-toggle="tab" role="tab" aria-controls="nav-home" aria-selected="true" target="invinqIFrame" onclick="changeUrl('invinqINCPH.php?s_PAI_part_no=#w1.PartNumber#')">(F1)<br>Sales</a>
+														
+														<li class="yellow">
+															<a target="invinqIFrame" onclick="changeUrl('invinqF2.php?s_PAI_part_no=#w1.PartNumber#')">(F2)<br>Notes</a>
+														</li>
+														<li class="gray">
+															<a target="invinqIFrame" onclick="changeUrl('invinqF6.php?s_PAI_part_no=#w1.PartNumber#')">(F6)<br>Moves</a>
+														</li>
+														<li class="darkgreen">
+															<a target="invinqIFrame" onclick="changeUrl('invinqF7.php?s_PAI_part_no=#w1.PartNumber#')">(F7)<br>Quotes</a>
+														</li>
+														<li class="crimson">
+															<a target="invinqIFrame" onclick="changeUrl('invinqK.php?s_PAI_part_no=#w1.PartNumber#')">(K)<br>Kit</a>
+														</li>
+														<li class="darkred">
+															<a target="invinqIFrame" onclick="changeUrl('invinqL.php?s_PAI_part_no=#w1.PartNumber#')">(L)<br>List</a>
+														</li>
+														<li class="brown">
+															<a target="invinqIFrame" onclick="changeUrl('invinqC.php?s_PAI_part_no=#w1.PartNumber#')">(C)<br>Ctlg</a>
+														</li>
+														<li class="red">
+															<a target="invinqIFrame" onclick="changeUrl('invinqR.php?s_PAI_part_no=#w1.PartNumber#')">(R)<br>Form</a>
+														</li>
+														<li class="blue">
+															<a target="invinqIFrame" onclick="changeUrl('invinqM.php?s_PAI_part_no=#w1.PartNumber#')">(M)<br>Drw</a>
+														</li>
+														<li class="purple">
+															<a target="invinqIFrame" onclick="changeUrl('invinqBH.php?s_PAI_part_no=#w1.PartNumber#')">(BH)<br>Bin Hist</a>
+														</li>
+														<li class="orange">
+															<a target="invinqIFrame" onclick="changeUrl('invinqPartFigurw1.php?s_PAI_part_no=#w1.PartNumber#')">Fig<br>Chg</a>
+														</li>
+														<li class="coral">
+															<a target="invinqIFrame" onclick="changeUrl('invinqO.php?s_PAI_part_no=#w1.PartNumber#')">(O)<br>Lost</a>
+														</li>
+														<li class="darkolivegreen">
+															<a target="invinqIFrame" onclick="changeUrl('invinqOpenCustOrders.php?s_PAI_part_no=#w1.PartNumber#')">Open<br>Orders</a>
+														</li>
+														<li class="orange">
+															<a target="invinqIFrame" onclick="changeUrl('invinqLC.php?s_PAI_part_no=#w1.PartNumber#')">Lot<br>Code</a>
+														</li>
+														<li class="deeppink">
+															<a target="invinqIFrame" onclick="changeUrl('invinqSupport.php?s_PAI_part_no=#w1.PartNumber#')">Follow<br>Up</a>
+														</li>
+														<li class="yellow">
+															<a target="invinqIFrame" onclick="changeUrl('invinqProImp.php?s_PAI_part_no=#w1.PartNumber#')">Quality<br>Notes</a>
+														</li>
+													</ul>
+												</div>
+											</td>
+									  </tr>
+									 --->
+				</div>
+			</dir>
+			<div class="row">
+				<div class="col">
+		   		<iframe frameborder="0" scrolling="auto" name="invinqIFrame" src="" width="100%" height="2000"></iframe>
+		   	</div>
+		  </div>
+
+			<script>
+				function changeUrl(buttonURL) {
+			    var baseURL = "http://paiintranet.paiindustries.com/datapai/" + buttonURL;
+			    var innerText = '<p style="text-align:center"><img src="../../images/loading.gif"></p><script>window.location.replace("' + baseURL + '");<' + '/script>';
+			    document.getElementsByName('invinqIFrame')[0].srcdoc = innerText;
+				}
+			</script>
+
+		<cfelseif arrayLen(w1.hits.hits) gt 1>
+
+			<div class="row">
+				<div class="col">
+					<table class="table table-sm table-hover border">
+						<thead>
+							<tr>
+								<th scope="col">Part Number</th>
+								<th scope="col">Product Line</th>
+								<th scope="col">Product Group</th>
+								<th scope="col">Product Class</th>
+								<th scope="col">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<cfloop index="currentIndex" array="#w1.hits.hits#"> 
+								<tr>
+									<td><a href="/main/search?id=#currentIndex._id#">#currentIndex._source.PartNumber#</a></td>
+									<td>#currentIndex._source.ProductLine#</td>
+									<td>#currentIndex._source.ProductGroup#</td>
+									<td>#currentIndex._source.ProductClass#</td>
+									<td>#currentIndex._source.Description#</td>
+								</tr>
+							</cfloop> 
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<nav class="d-flex justify-content-end" aria-label="...">
+					  <ul class="pagination">
+					  	<cfif previous_page neq 0>
+					    	<li class="page-item"><a class="page-link" href="/main/search?search_term=#search_term#&current_page=#previous_page#">Previous</a></li>
+					    <cfelse>
+						    <li class="page-item disabled"><span class="page-link">Previous</span></li>
+						  </cfif>
+
+					    <cfloop index="i" from="1" to="#end_page#">
+					    	<cfif current_page eq i>
+							    <li class="page-item active"><a class="page-link" href="##">#i# <span class="sr-only">(current)</span></a></li>
+					    	<cfelse>
+							    <li class="page-item"><a class="page-link" href="/main/search?search_term=#search_term#&current_page=#i#">#i#</a></li>
+							  </cfif>
+							</cfloop>
+
+					  	<cfif next_page lte end_page>
+					    	<li class="page-item"><a class="page-link" href="/main/search?search_term=#search_term#&current_page=#next_page#">Next</a></li>
+					    <cfelse>
+						    <li class="page-item disabled"><span class="page-link">Next</span></li>
+						  </cfif>
+					  </ul>
+					</nav>
+				</div>
+			</div>
+
+		<cfelse>
+
+			<div class="row">
+				<div class="col">
+					<div class="alert alert-warning" role="alert">
+						No records were found	
+					</div>
+				</div>
+			</div>
+
+		</cfif>
+	</cfif>
+
+</div>
+
+<!---
 	<cfif isDefined("esw1")>
 		<cfif esw1.hits.total eq 1>
 			
@@ -233,103 +424,6 @@
 				</table>
 			</td>
 	  </tr>
+	--->
 	 
-	  <tr>
-	    <td>
-	    	<div class="mattblacktabs">
-					<ul>
-						<li class="green">
-							<a target="invinqIFrame" onclick="changeUrl('invinqINCPH.php?s_PAI_part_no=#w1.PartNumber#')">(F1)<br>Sales</a>
-						</li>
-						<li class="yellow">
-							<a target="invinqIFrame" onclick="changeUrl('invinqF2.php?s_PAI_part_no=#w1.PartNumber#')">(F2)<br>Notes</a>
-						</li>
-						<li class="gray">
-							<a target="invinqIFrame" onclick="changeUrl('invinqF6.php?s_PAI_part_no=#w1.PartNumber#')">(F6)<br>Moves</a>
-						</li>
-						<li class="darkgreen">
-							<a target="invinqIFrame" onclick="changeUrl('invinqF7.php?s_PAI_part_no=#w1.PartNumber#')">(F7)<br>Quotes</a>
-						</li>
-						<li class="crimson">
-							<a target="invinqIFrame" onclick="changeUrl('invinqK.php?s_PAI_part_no=#w1.PartNumber#')">(K)<br>Kit</a>
-						</li>
-						<li class="darkred">
-							<a target="invinqIFrame" onclick="changeUrl('invinqL.php?s_PAI_part_no=#w1.PartNumber#')">(L)<br>List</a>
-						</li>
-						<li class="brown">
-							<a target="invinqIFrame" onclick="changeUrl('invinqC.php?s_PAI_part_no=#w1.PartNumber#')">(C)<br>Ctlg</a>
-						</li>
-						<li class="red">
-							<a target="invinqIFrame" onclick="changeUrl('invinqR.php?s_PAI_part_no=#w1.PartNumber#')">(R)<br>Form</a>
-						</li>
-						<li class="blue">
-							<a target="invinqIFrame" onclick="changeUrl('invinqM.php?s_PAI_part_no=#w1.PartNumber#')">(M)<br>Drw</a>
-						</li>
-						<li class="purple">
-							<a target="invinqIFrame" onclick="changeUrl('invinqBH.php?s_PAI_part_no=#w1.PartNumber#')">(BH)<br>Bin Hist</a>
-						</li>
-						<li class="orange">
-							<a target="invinqIFrame" onclick="changeUrl('invinqPartFigurw1.php?s_PAI_part_no=#w1.PartNumber#')">Fig<br>Chg</a>
-						</li>
-						<li class="coral">
-							<a target="invinqIFrame" onclick="changeUrl('invinqO.php?s_PAI_part_no=#w1.PartNumber#')">(O)<br>Lost</a>
-						</li>
-						<li class="darkolivegreen">
-							<a target="invinqIFrame" onclick="changeUrl('invinqOpenCustOrders.php?s_PAI_part_no=#w1.PartNumber#')">Open<br>Orders</a>
-						</li>
-						<li class="orange">
-							<a target="invinqIFrame" onclick="changeUrl('invinqLC.php?s_PAI_part_no=#w1.PartNumber#')">Lot<br>Code</a>
-						</li>
-						<li class="deeppink">
-							<a target="invinqIFrame" onclick="changeUrl('invinqSupport.php?s_PAI_part_no=#w1.PartNumber#')">Follow<br>Up</a>
-						</li>
-						<li class="yellow">
-							<a target="invinqIFrame" onclick="changeUrl('invinqProImp.php?s_PAI_part_no=#w1.PartNumber#')">Quality<br>Notes</a>
-						</li>
-					</ul>
-				</div>
-			</td>
-	  </tr>
-	 
-	  <tr>
-	    <td>
-	    		<iframe frameborder="0" scrolling="auto" name="invinqIFrame" src="" width="100%" height="2000"></iframe>
-	    </td>
-	  </tr>
-	</table>
-
-
-
-		<cfelseif esresult.hits.total gt 1>
-			<table cellspacing="0" cellpadding="0" width="100%">
-				<tr class="Caption">
-					<th scope="col">Part Number</th>
-					<th scope="col">Product Line</th>
-					<th scope="col">Product Group</th>
-					<th scope="col">Product Class</th>
-					<th scope="col">Description</th>
-				</tr>
-				<cfloop index="currentIndex" array="#esresult.hits.hits#"> 
-					<tr class="Row">
-						<td><a href="/main/search?sku=#currentIndex._source.PartNumber#">#currentIndex._source.PartNumber#</a></td>
-						<td>#currentIndex._source.ProductLine#</td>
-						<td>#currentIndex._source.ProductGroup#</td>
-						<td>#currentIndex._source.ProductClass#</td>
-						<td>#currentIndex._source.Description#</td>
-					</tr>
-				</cfloop> 
-			</table>
-		<cfelse>
-			No records were found	
-		</cfif>
-	</cfif>
-
-	<script>
-		function changeUrl(buttonURL) {
-	    var baseURL = "http://paiintranet.paiindustriw1.com/datapai/" + buttonURL;
-	    var innerText = '<p style="text-align:center"><img src="../../images/loading.gif"></p><script>window.location.replace("' + baseURL + '");<' + '/script>';
-	    document.getElementsByName('invinqIFrame')[0].srcdoc = innerText;
-		}
-	</script>
-</div>
 </cfoutput>
