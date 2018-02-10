@@ -1,9 +1,9 @@
 <cfoutput>
 
-<div class="wrapper wrapper-content animated fadeIn">
-
 	<cfif isDefined("w1")>
 		<cfif arrayLen(w1.hits.hits) eq 1>
+
+		<div class="wrapper wrapper-content animated fadeIn">
 
 			<div class="row">
 				<div class="col">
@@ -71,6 +71,7 @@
           </div>
 				</div>
 			</div>
+		</div>
 <!---					<nav>
 			<dir class="row">
 				<div class="col">
@@ -159,68 +160,88 @@
 
 		<cfelseif arrayLen(w1.hits.hits) gt 1>
 
-			<div class="row">
-				<div class="col">
-					<table class="table table-sm table-hover border">
-						<thead>
-							<tr>
-								<th scope="col">Part Number</th>
-								<th scope="col">Product Line</th>
-								<th scope="col">Product Group</th>
-								<th scope="col">Product Class</th>
-								<th scope="col">Description</th>
-							</tr>
-						</thead>
-						<tbody>
-							<cfloop index="currentIndex" array="#w1.hits.hits#"> 
-								<tr>
-									<td><a href="/main/search?id=#currentIndex._id#">#currentIndex._source.PartNumber#</a></td>
-									<td>#currentIndex._source.ProductLine#</td>
-									<td>#currentIndex._source.ProductGroup#</td>
-									<td>#currentIndex._source.ProductClass#</td>
-									<td>#currentIndex._source.Description#</td>
-								</tr>
-							</cfloop> 
-						</tbody>
-					</table>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<nav class="d-flex justify-content-end" aria-label="...">
-					  <ul class="pagination">
-					  	<cfif previous_page neq 0>
-					    	<li class="page-item"><a class="page-link" href="/main/search?search_term=#search_term#&current_page=#previous_page#">Previous</a></li>
-					    <cfelse>
-						    <li class="page-item disabled"><span class="page-link">Previous</span></li>
-						  </cfif>
-
-					    <cfloop index="i" from="1" to="#end_page#">
-					    	<cfif current_page eq i>
-							    <li class="page-item active"><a class="page-link" href="##">#i# <span class="sr-only">(current)</span></a></li>
-					    	<cfelse>
-							    <li class="page-item"><a class="page-link" href="/main/search?search_term=#search_term#&current_page=#i#">#i#</a></li>
-							  </cfif>
-							</cfloop>
-
-					  	<cfif next_page lte end_page>
-					    	<li class="page-item"><a class="page-link" href="/main/search?search_term=#search_term#&current_page=#next_page#">Next</a></li>
-					    <cfelse>
-						    <li class="page-item disabled"><span class="page-link">Next</span></li>
-						  </cfif>
-					  </ul>
-					</nav>
+			<div class="row wrapper border-bottom white-bg page-header">
+				<div class="col-xs-12">
+					<h2>Multiple Part Listing</h2>
+					<small>Your search matched <strong>#w1.hits.total#</strong> records.</small>
+					<p></p>
 				</div>
 			</div>
 
+			<div class="wrapper wrapper-content animated fadeIn">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="inbox float-e-margins">
+							<div class="ibox-content">
+								<div class="table-responsive">
+								<table class="table table-sm table-hover border">
+									<thead>
+										<tr>
+											<th scope="col" class="col-xs-1">Part Number</th>
+											<th scope="col" class="col-xs-2">Product Line</th>
+											<th scope="col" class="col-xs-2">Product Group</th>
+											<th scope="col" class="col-xs-4">Product Class</th>
+											<th scope="col" class="col-xs-3">Description</th>
+										</tr>
+									</thead>
+									<tbody>
+										<cfloop index="currentIndex" array="#w1.hits.hits#"> 
+											<tr>
+												<td><a href="/main/search?id=#currentIndex._id#">#currentIndex._source.PartNumber#</a></td>
+												<td>#currentIndex._source.ProductLine#</td>
+												<td>#currentIndex._source.ProductGroup#</td>
+												<td>#currentIndex._source.ProductClass#</td>
+												<td>#currentIndex._source.Description#</td>
+											</tr>
+										</cfloop> 
+									</tbody>
+								</table>
+								</div>
+							  <ul class="pagination">
+							  	<cfif previous_page neq 0>
+							    	<li class="page-item"><a class="page-link" href="/main/search?search_term=#search_term#&current_page=#previous_page#">Previous</a></li>
+							    <cfelse>
+								    <li class="page-item disabled"><span class="page-link">Previous</span></li>
+								  </cfif>
+
+							    <cfloop index="i" from="1" to="#end_page#">
+							    	<cfif current_page eq i>
+									    <li class="page-item active"><a class="page-link" href="##">#i# <span class="sr-only">(current)</span></a></li>
+							    	<cfelse>
+									    <li class="page-item"><a class="page-link" href="/main/search?search_term=#search_term#&current_page=#i#">#i#</a></li>
+									  </cfif>
+									</cfloop>
+
+							  	<cfif next_page lte end_page>
+							    	<li class="page-item"><a class="page-link" href="/main/search?search_term=#search_term#&current_page=#next_page#">Next</a></li>
+							    <cfelse>
+								    <li class="page-item disabled"><span class="page-link">Next</span></li>
+								  </cfif>
+							  </ul>
+ 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		<cfelse>
 
-			<div class="row">
-				<div class="col">
+<!---
+			<div class="row wrapper border-bottom white-bg page-header">
+				<div class="col-xs-12">
 					<p></p>
-					<div class="alert alert-warning" role="alert">
-						No records were found	
+					<p></p>
+					<div class="alert alert-danger" role="alert">
+						<strong>Oops!</strong> No records were found. Please try another search.	
 					</div>
+					<p></p>
+				</div>
+			</div>
+--->
+			<div class="row wrapper border-bottom white-bg page-header">
+				<div class="col-xs-12">
+					<h2>Multiple Part Listing</h2>
+					<small>Your search matched <strong>0</strong> records.</small>
+					<p></p>
 				</div>
 			</div>
 

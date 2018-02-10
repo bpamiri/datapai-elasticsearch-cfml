@@ -31,7 +31,6 @@
             #includePartial('/shared/topnavbar')#
 
             <!-- Main view  -->
-            <p></p><p></p>
             #flashMessages()#
             #includeContent()#
 
