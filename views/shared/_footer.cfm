@@ -1,8 +1,8 @@
-<div class="footer">
+<div class="footer fixed">
     <div class="pull-right">
-        Example text
+        All Rights Reserved.
     </div>
     <div>
-        <strong>Copyright</strong> Example Company &copy; 2014-2017
+        <strong>Copyright</strong> PAI Industries, Inc. &copy; 2018
     </div>
 </div>

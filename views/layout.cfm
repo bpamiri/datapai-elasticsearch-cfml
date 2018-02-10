@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -11,17 +11,18 @@
 
   <link href="/stylesheets/animate.css" rel="stylesheet">
   <link href="/stylesheets/style.css" rel="stylesheet">
-
 </head>
-<body>
+<body class="top-navigation fixed-nav ">
 
   <cfoutput>
 
     <!-- Wrapper-->
-    <div id="wrapper">
+    <div id="wrapper container">
 
+        <!---
         <!-- Navigation -->
         #includePartial('/shared/navigation')#
+        --->
 
         <!-- Page wraper -->
         <div id="page-wrapper" class="gray-bg">
@@ -30,6 +31,7 @@
             #includePartial('/shared/topnavbar')#
 
             <!-- Main view  -->
+            <p></p><p></p>
             #flashMessages()#
             #includeContent()#
 
@@ -42,17 +44,17 @@
     </div>
     <!-- End wrapper-->
 
+  <!-- Mainly scripts -->
+  #javaScriptIncludeTag(source="jquery-3.1.1.min",encode="false")#
+  #javaScriptIncludeTag(source="bootstrap.min",encode="false")#
+  #javaScriptIncludeTag(source="jquery.metisMenu",encode="false")#
+  #javaScriptIncludeTag(source="jquery.slimscroll.min",encode="false")#
+
+  <!-- Custom and plugin javascript -->
+  #javaScriptIncludeTag(source="inspinia",encode="false")#
+  #javaScriptIncludeTag(source="pace.min",encode="false")#
+
   </cfoutput>
-
-<!-- Mainly scripts -->
-<script src="/javascript/jquery-3.1.1.min.js"></script>
-<script src="/javascript/bootstrap.min.js"></script>
-<script src="/javascript/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="/javascript/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-<!-- Custom and plugin javascript -->
-<script src="/javascript/inspinia.js"></script>
-<script src="/javascript/plugins/pace/pace.min.js"></script>
 
 </body>
 </html>

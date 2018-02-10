@@ -78,7 +78,10 @@
 				<cfset previous_page = current_page - 1>
 				<cfset next_page = current_page + 1>
 			</cfif>
-		<cfelseif StructKeyExists(params,"ID")>
+		<cfelse>
+			<cfset params.search_term = "">
+		</cfif>
+		<cfif StructKeyExists(params,"ID")>
 			<cfset w1 = searchByID('w1',ID)>
 			<cfset w2 = searchByID('w2',ID)>
 			<cfset w4 = searchByID('w4',ID)>
@@ -86,6 +89,8 @@
 			<cfset w6 = searchByID('w6',ID)>
 			<cfset w88 = searchByID('w88',ID)>
 			<cfset w99 = searchByID('w99',ID)>
+		<cfelse>
+			<cfset params.id = 0>
 		</cfif>
 	</cffunction>
 

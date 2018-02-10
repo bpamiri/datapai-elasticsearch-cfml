@@ -1,48 +1,77 @@
 <cfoutput>
 
-<div class="container-fluid">
-	<div class="row justify-content-center">
-		<div class="col" align="center" style="padding: 20px">
-			#startFormTag(action="search",method="GET")#
-
-			    #textFieldTag(Name="search_term",autofocus="autofocus" )#
-			    #submitTag(value="P")#
-
-			#endFormTag()#
-		</div>
-	</div>
+<div class="wrapper wrapper-content animated fadeIn">
 
 	<cfif isDefined("w1")>
 		<cfif arrayLen(w1.hits.hits) eq 1>
 
 			<div class="row">
 				<div class="col">
-					<nav>
-					  <div class="nav nav-sm nav-tabs" id="nav-tab" role="tablist">
-					    <a class="nav-item nav-link active" id="nav-w1-tab" data-toggle="tab" href="##nav-w1" role="tab" aria-controls="nav-home" aria-selected="true">W1</a>
-					    <a class="nav-item nav-link" id="nav-w2-tab" data-toggle="tab" href="##nav-w2" role="tab" aria-controls="nav-profile" aria-selected="false">W2</a>
-					    <a class="nav-item nav-link" id="nav-w4-tab" data-toggle="tab" href="##nav-w4" role="tab" aria-controls="nav-contact" aria-selected="false">W4</a>
-					    <a class="nav-item nav-link" id="nav-w5-tab" data-toggle="tab" href="##nav-w5" role="tab" aria-controls="nav-contact" aria-selected="false">W5</a>
-					    <a class="nav-item nav-link" id="nav-w6-tab" data-toggle="tab" href="##nav-w6" role="tab" aria-controls="nav-contact" aria-selected="false">W6</a>
-					    <a class="nav-item nav-link" id="nav-w88-tab" data-toggle="tab" href="##nav-w88" role="tab" aria-controls="nav-contact" aria-selected="false">W88</a>
-					    <a class="nav-item nav-link" id="nav-w99-tab" data-toggle="tab" href="##nav-w99" role="tab" aria-controls="nav-contact" aria-selected="false">W99</a>
-					  </div>
-					</nav>
+          <div class="tabs-container">
+            <ul class="nav nav-tabs">
+              <li class="active">
+              	<a data-toggle="tab" href="##nav-w1" aria-expanded="true">W1</a>
+              </li>
+              <li class="">
+						    <a data-toggle="tab" href="##nav-w2" aria-expanded="false">W2</a>
+              </li>
+              <li class="">
+			    			<a data-toggle="tab" href="##nav-w4" aria-expanded="false">W4</a>
+              </li>
+              <li class="">
+			    			<a data-toggle="tab" href="##nav-w5" aria-expanded="false">W5</a>
+              </li>
+              <li class="">
+						    <a data-toggle="tab" href="##nav-w6" aria-expanded="false">W6</a>
+              </li>
+              <li class="">
+			    			<a data-toggle="tab" href="##nav-w88" aria-expanded="false">W88</a>
+              </li>
+              <li class="">
+			    			<a data-toggle="tab" href="##nav-w99" aria-expanded="false">W99</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div id="nav-w1" class="tab-pane active">
+                <div class="panel-body">
+                	#includePartial("w1")#
+                </div>
+              </div>
+              <div id="nav-w2" class="tab-pane">
+                <div class="panel-body">
+                	#includePartial("w2")#
+                </div>
+              </div>
+              <div id="nav-w4" class="tab-pane">
+                <div class="panel-body">
+                	#includePartial("w4")#
+                </div>
+              </div>
+              <div id="nav-w5" class="tab-pane">
+                <div class="panel-body">
+                	#includePartial("w5")#
+                </div>
+              </div>
+              <div id="nav-w6" class="tab-pane">
+                <div class="panel-body">
+                	#includePartial("w6")#
+                </div>
+              </div>
+              <div id="nav-w88" class="tab-pane">
+                <div class="panel-body">
+                	#includePartial("w88")#
+                </div>
+              </div>
+              <div id="nav-w99" class="tab-pane">
+                <div class="panel-body">
+                	#includePartial("w99")#
+                </div>
+              </div>
+            </div>
+          </div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col">
-					<div class="tab-content" id="nav-tabContent">
-					  <div class="tab-pane fade show active" id="nav-w1" role="tabpanel" aria-labelledby="nav-home-tab">#includePartial("w1")#</div>
-					  <div class="tab-pane fade" id="nav-w2" role="tabpanel" aria-labelledby="nav-profile-tab">#includePartial("w2")#</div>
-					  <div class="tab-pane fade" id="nav-w4" role="tabpanel" aria-labelledby="nav-contact-tab">#includePartial("w4")#</div>
-					  <div class="tab-pane fade" id="nav-w5" role="tabpanel" aria-labelledby="nav-contact-tab">#includePartial("w5")#</div>
-					  <div class="tab-pane fade" id="nav-w6" role="tabpanel" aria-labelledby="nav-contact-tab">#includePartial("w6")#</div>
-					  <div class="tab-pane fade" id="nav-w88" role="tabpanel" aria-labelledby="nav-contact-tab">#includePartial("w88")#</div>
-					  <div class="tab-pane fade" id="nav-w99" role="tabpanel" aria-labelledby="nav-contact-tab">#includePartial("w99")#</div>
-					</div>
-				</div>
-			</div>
+<!---					<nav>
 			<dir class="row">
 				<div class="col">
 					<ul class="nav nav-tabs">
@@ -59,7 +88,6 @@
 					    <a class="nav-link" href="##">Disabled</a>
 					  </li>
 					</ul>
-<!---					<nav>
 					  <div class="nav nav-sm nav-tabs" id="nav-tab" role="tablist">
 					    <a class="nav-item nav-link" id="nav-f1-tab" data-toggle="tab" role="tab" aria-controls="nav-home" aria-selected="true" target="invinqIFrame" onclick="changeUrl('invinqINCPH.php?s_PAI_part_no=#w1.PartNumber#')">(F1)<br>Sales</a>
 														
@@ -112,7 +140,6 @@
 												</div>
 											</td>
 									  </tr>
-									 --->
 				</div>
 			</dir>
 			<div class="row">
@@ -120,6 +147,7 @@
 		   		<iframe frameborder="0" scrolling="auto" name="invinqIFrame" src="" width="100%" height="2000"></iframe>
 		   	</div>
 		  </div>
+									 --->
 
 			<script>
 				function changeUrl(buttonURL) {
@@ -189,6 +217,7 @@
 
 			<div class="row">
 				<div class="col">
+					<p></p>
 					<div class="alert alert-warning" role="alert">
 						No records were found	
 					</div>
