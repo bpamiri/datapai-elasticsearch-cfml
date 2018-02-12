@@ -1,0 +1,12 @@
+/* Tabs */
+.datapai .tabs-container .panel-body {
+  background: #eee;
+}
+.tabs-container .nav-tabs > li.active > a,
+.tabs-container .nav-tabs > li.active > a:hover,
+.datapai .tabs-container .nav-tabs > li.active > a:focus {
+  background-color: #eee;
+}
+.datapai .panel-body {
+  background: #eee;
+}

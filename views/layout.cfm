@@ -11,6 +11,7 @@
 
   <link href="/stylesheets/animate.css" rel="stylesheet">
   <link href="/stylesheets/style.css" rel="stylesheet">
+  <link href="/stylesheets/datapai.css" rel="stylesheet">
 </head>
 <body class="top-navigation fixed-nav ">
 

@@ -1,5 +1,5 @@
 {
-    "name":"elasticsearch_cfml_sample",
+    "name":"datapai-elasticsearch-cfml",
     "force":true,
     "web":{
         "http":{
