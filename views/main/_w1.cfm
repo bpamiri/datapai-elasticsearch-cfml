@@ -51,7 +51,7 @@
 		<div class="ibox float-e-margins">
 			<div class="ibox-title">
 				<span class="pull-right">
-					<a href="/main/search?search_term=#w1.PreviousPart#" class="btn btn-info btn-xs vcenter" role="button">
+					<a href="/main/search?search_term=#w1.PreviousPart#" class="btn btn-info btn-xs" role="button">
 						<i class="fa fa-arrow-left"></i> #w1.PreviousPart#
 					</a>
 					<a href="/main/search?search_term=#w1.NextPart#" class="btn btn-info btn-xs" role="button">
