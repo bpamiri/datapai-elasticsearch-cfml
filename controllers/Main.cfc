@@ -34,19 +34,19 @@
 		<cfset elastic_url = "http://10.100.10.90:9200/#warehouse#inventory/inventory/_search">
 
 		<cfset esquery = '{
-												"from": "#start_item#",
+											  "from": "#start_item#",
+											  "sort" : {"PartNumber.keyword": "asc"},
 											  "query": {
 											    "simple_query_string": {
 											      "query": "#search_terms#",
-											        "fields": [
-											          "OEM",
-											          "Keywords",
-											          "PartNumber",
-											          "SKU",
-											          "ProductLine"
-											        ],
-											        "default_operator": "OR"
-											      }
+											      "fields": [
+											        "OEM",
+											        "Keywords",
+											        "PartNumber",
+											        "SKU",
+											        "ProductLine"
+											      ],
+											      "default_operator": "OR"
 											    }
 											  }
 											}'>

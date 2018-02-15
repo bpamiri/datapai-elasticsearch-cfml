@@ -11,6 +11,12 @@
 <div class="wrapper wrapper-content animated fadeIn">
 
 	<div class="row">
+		<div class="col-xs-12 text-right">
+			<h1>#w1.hits.hits[1]._source.PartNumber#</h1>
+			<P>#w1.hits.hits[1]._source.Description#</p>
+		</div>
+	</div>
+	<div class="row">
 		<div class="col">
       <div class="tabs-container datapai">
         <ul class="nav nav-tabs">
