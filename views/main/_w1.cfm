@@ -141,8 +141,6 @@
 						<small>Featured Part</small>
 					</div>
 					<div class="col-md-2">
-						<h4 class="no-margins">#w1.ImageFileName# &nbsp;</h4>
-						<small>Image File Name</small>
 					</div>
 				</div>
 				<p></p>
@@ -171,6 +169,119 @@
 						<h4 class="no-margins">#w1.LabeledAt# &nbsp;</h4>
 						<small>Labeled At</small>
 					</div>
+				</div>
+				<p></p>
+				<div class="row">
+					<div class="col-md-3">
+						<h4 class="no-margins">#w1.Keywords#</h4>
+						<small>Keywords</small>
+					</div>
+					<div class="col-sm-2">
+						<h4 class="no-margins">#w1.LeadTimeDays#&nbsp;</h4>
+						<small>Lead Time Days</small>
+					</div>
+					<div class="col-md-1">
+						<h4 class="no-margins">#w1.LeadTimeMonths#&nbsp;</h4>
+						<small>Lead Time Months</small>
+					</div>
+					<div class="col-md-2">
+						<h4 class="no-margins">#w1.MinStockLevel#/#w1.MaxStockLevel#</h4>
+						<small>Min/Max Stock Levels</small>
+					</div>
+					<div class="col-md-2">
+						<h4 class="no-margins">#w1.ClassificationCode#&nbsp;</h4>
+						<small>Classification Code</small>
+					</div>
+					<div class="col-md-2">
+						<h4 class="no-margins">#w1.BlanketPO#&nbsp;</h4>
+						<small>Blanket PO</small>
+					</div>
+				</div>
+				<p></p>
+				<div class="row">
+					<div class="col-md-3">
+						<h4 class="no-margins">#w1.ProductGroup#&nbsp;</h4>
+						<small>Product Group</small>
+					</div>
+					<div class="col-sm-2">
+						<h4 class="no-margins">#w1.ProductClass#&nbsp;</h4>
+						<small>Product Class</small>
+					</div>
+					<div class="col-md-1">
+						<h4 class="no-margins">#w1.ProductLine#&nbsp;</h4>
+						<small>Product Line</small>
+					</div>
+					<div class="col-md-2">
+						<h4 class="no-margins">#w1.ProductBrand#&nbsp;</h4>
+						<small>Product Brand</small>
+					</div>
+					<div class="col-md-4">
+						<h4 class="no-margins">#w1.ImageFileName#&nbsp;</h4>
+						<small>Image File Name</small>
+					</div>
+				</div>
+				<p></p>
+				<div class="row">
+					<div class="col-md-8">
+            <table class="table table-striped bordered">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Make</th>
+                  <th>Model</th>
+                  <th>Application</th>
+                </tr>
+              </thead>
+              <tbody>
+              	<cfloop index="currentIndex" array="#w1.YearMakeModel#"> 
+                  <tr>
+                    <td>#currentIndex.Year#</td>
+                    <td>#currentIndex.Make#</td>
+                    <td>#currentIndex.Model#</td>
+                    <td>#currentIndex.ApplicationDescription#</td>
+                  </tr>
+                </cfloop>
+              </tbody>
+            </table>
+            <table class="table table-striped bordered">
+              <thead>
+                <tr>
+                  <th>Part Number</th>
+                  <th>W1QOH</th>
+                  <th class="text-right">Export Price</th>
+                  <th class="text-right">Domestic Price</th>
+                </tr>
+              </thead>
+              <tbody>
+              	<cfloop index="currentIndex" array="#w1.Interchanges#"> 
+                  <tr>
+                    <td>#currentIndex.PartNumber#</td>
+                    <td>#currentIndex.W1QOH#</td>
+                    <td class="text-right">#currentIndex.ExportPrice#</td>
+                    <td class="text-right">#currentIndex.DomesticPrice#</td>
+                  </tr>
+                </cfloop>
+              </tbody>
+            </table>
+ 					</div>
+					<div class="col-md-4">
+            <table class="table table-striped bordered">
+              <thead>
+                <tr>
+                  <th>Bin</th>
+                  <th class="text-right">Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+              	<cfloop index="currentIndex" array="#w1.BinLocations#"> 
+                  <tr>
+                    <td>#currentIndex.BinLocation#</td>
+                    <td class="text-right">#currentIndex.BinQuantity#</td>
+                  </tr>
+                </cfloop>
+              </tbody>
+            </table>
+ 					</div>
 				</div>
 			</div>
 		</div>
