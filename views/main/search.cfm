@@ -1,5 +1,8 @@
 <cfoutput>
 
+<!---
+<cfdump var="#w1#">
+--->
 <cfif isDefined("w1")>
 	<cfif arrayLen(w1.hits.hits) eq 1>
 
@@ -15,5 +18,5 @@
 
 	</cfif>
 </cfif>
-	 
+
 </cfoutput>

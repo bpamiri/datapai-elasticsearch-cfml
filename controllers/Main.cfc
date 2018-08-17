@@ -17,6 +17,7 @@
 											}'>
 
 		<cfhttp result="result" method="POST" charset="utf-8" url="#elastic_url#">
+		  <cfhttpparam type="header" name="Authorization" value="Basic #ToBase64("elastic:Dupl1c1ty!")#" />
 			<cfhttpparam type="header" name="Content-Type" value="application/json" />
     	<cfhttpparam type="body" value="#esquery#">
 		</cfhttp>
@@ -52,6 +53,7 @@
 											}'>
 
 		<cfhttp result="result" method="POST" charset="utf-8" url="#elastic_url#">
+		  <cfhttpparam type="header" name="Authorization" value="Basic #ToBase64("elastic:Dupl1c1ty!")#" />
 			<cfhttpparam type="header" name="Content-Type" value="application/json" />
     	<cfhttpparam type="body" value="#esquery#">
 		</cfhttp>
